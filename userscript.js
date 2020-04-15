@@ -2,11 +2,10 @@
 // @name         Guardian Crossword Focus
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  Only show the current clue in Guardian crosswords
+// @description  Show only the current clue (for the activated cells in the grid) in Guardian crosswords
 // @author       Akash
 // @match        https://www.theguardian.com/crosswords/quick/*
 // @grant        none
-// @require      https://code.jquery.com/jquery-3.4.1.slim.min.js
 // ==/UserScript==
 
 (function() {
@@ -27,19 +26,18 @@
 
     function init() {
         document.addEventListener('keyup', () => {
-            doStuff()
+            hideAllCluesExceptSelected()
         })
 
         document.addEventListener('click', () => {
-            doStuff()
+            hideAllCluesExceptSelected()
         })
 
         document.querySelector('.crossword__clue').click()
     }
 
 
-    function doStuff() {
-        console.log('doStuff')
+    function hideAllCluesExceptSelected() {
         document.querySelectorAll('.crossword__clue:not(.crossword__clue--selected)').forEach(el => {
             el.style = 'display:none'
         })
