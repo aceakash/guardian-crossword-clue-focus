@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Guardian Crossword Focus
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Show only the current clue (for the activated cells in the grid) in Guardian crosswords
 // @author       Akash
 // @match        https://www.theguardian.com/crosswords/quick/*
