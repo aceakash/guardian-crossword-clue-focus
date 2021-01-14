@@ -41,7 +41,8 @@
         document.querySelectorAll('.crossword__clue:not(.crossword__clue--selected)').forEach(el => {
             el.style = 'display:none'
         })
-
-        document.querySelector('.crossword__clue--selected').style = 'display:block'
+        document.querySelectorAll('.crossword__clue--selected').forEach(el => {
+            el.style = 'display:block'
+        })
     }
 })();
